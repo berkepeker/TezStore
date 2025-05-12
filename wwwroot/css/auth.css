@@ -1,0 +1,407 @@
+/* Giriş/Kayıt (Auth) sayfalarına özel modern ve sade stiller */
+body.login-page {
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    margin: 0;
+}
+
+html, body.login-page {
+    height: 100%;
+    overflow: hidden;
+}
+
+/* .container'ın display: flex ve hizalama stilleri kaldırıldı */
+/*
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+    margin: 0;
+    max-width: 100% !important;
+}
+*/
+
+.navbar {
+    position: relative;
+    z-index: 10;
+}
+
+.login-container {
+
+    transform: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 70px);
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+}
+
+.login-card, .signup-card {
+    background: #fff;
+    padding: 2.5rem 2.5rem 2rem 2.5rem;
+    border-radius: 1.25rem;
+    box-shadow: 0 8px 32px rgba(34,197,94,0.10);
+    width: 100%;
+    max-width: 420px;
+    min-width: 360px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    transition: all 0.3s ease;
+}
+.signup-card {
+    margin-top: -30px; /* Biraz yukarı taşındı */
+    opacity: 0;
+    animation: fadeInCard 0.8s ease forwards;
+    min-height: 550px;
+    text-align: center;
+    justify-content: center;
+    padding: 2rem;
+    max-width: 450px;
+}
+@keyframes fadeInCard {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.login-header h2 {
+    color: #2d3748;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+.login-header p {
+    color: #718096;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.id-container { margin-bottom: 1rem; width: 100%; }
+.index-input {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    font-family: monospace;
+    letter-spacing: 2px;
+    background-color: #f8f9fa;
+    transition: border-color 0.3s ease;
+}
+
+.number-pad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    width: 100%;
+}
+.number-button {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    min-height: 50px;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.number-button:hover {
+    background-color: #f8f9fa;
+    border-color: #3498db;
+}
+.number-button:active { transform: scale(0.98); }
+.delete-button {
+    background-color: #fff5f5;
+    border-color: #feb2b2;
+    color: #e53e3e;
+}
+
+
+/* Bildirimler */
+#notification, .alert-success, .alert-error {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    color: white;
+    display: none;
+    z-index: 1000;
+    font-weight: bold;
+    font-size: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    align-items: center;
+    gap: 10px;
+}
+.alert-success {
+    background-color: rgba(72, 187, 120, 0.95);
+    color: white;
+    display: flex;
+}
+.alert-error {
+    background-color: rgba(245, 101, 101, 0.95);
+    color: white;
+    display: flex;
+}
+.success { background-color: #28a745; }
+.error { background-color: #dc3545; }
+.info { background-color: #17a2b8; }
+@keyframes fadein {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes fadeout {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+.fade-out {
+    animation: fadeOut 0.3s ease-out forwards;
+}
+@keyframes fadeOut {
+    from { transform: translate(-50%, 0); opacity: 1; }
+    to { transform: translate(-50%, -100%); opacity: 0; }
+}
+
+.fade-slide {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    height: 0;
+    overflow: hidden;
+}
+.fade-slide.show {
+    opacity: 1;
+    transform: translateY(0);
+    height: auto;
+}
+.error-message {
+    color: #dc3545;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    min-height: 1.2rem;
+}
+#phoneStep, #passwordStep { margin-top: 1.5rem; }
+#passwordStep { margin-top: 0; padding: 0 1rem; }
+.btn-loading {
+    position: relative;
+    pointer-events: none;
+    opacity: 0.7;
+}
+.btn-loading::after {
+    content: "";
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid #fff;
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    transform: translateY(-50%);
+}
+@keyframes spin {
+    from { transform: translateY(-50%) rotate(0deg); }
+    to { transform: translateY(-50%) rotate(360deg); }
+}
+.secondary-link {
+    margin-top: auto;
+    font-size: 0.9rem;
+    text-align: center;
+}
+.back-button {
+    margin-top: 0.5rem;
+    background: none;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+.password-toggle {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.input-group { position: relative; }
+.login-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 0;
+    padding-bottom: 60px;
+}
+
+.login-card h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+    color: #16a34a;
+}
+.login-card p {
+    color: #6b7280;
+    font-size: 1.08rem;
+    margin-bottom: 1.2rem;
+}
+.login-card input[type="text"], .login-card input[type="password"] {
+    padding: 0.85rem 1rem;
+    border-radius: 0.7rem;
+    border: 1.5px solid #e5e7eb;
+    font-size: 1.08rem;
+    background: #f9fafb;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+.login-card input[type="text"]:focus, .login-card input[type="password"]:focus {
+    border-color: #22c55e;
+    box-shadow: 0 0 0 2px #bbf7d0;
+    background: #fff;
+}
+.login-card .error-message {
+    color: #dc3545;
+    font-size: 0.97rem;
+    margin: 0.3rem 0 0.7rem 0.1rem;
+}
+.login-card button,
+.login-card .submit-button,
+.login-card .btn-loading {
+    width: 100%;
+    min-width: 180px;
+    padding: 0.7rem 0;
+    border-radius: 0.7rem;
+    font-size: 1.08rem;
+    font-weight: 600;
+    background: #22c55e !important;
+    color: #fff !important;
+    border: none !important;
+    box-shadow: 0 2px 8px rgba(34,197,94,0.08);
+    transition: background 0.18s;
+    margin: 0;
+    display: block;
+}
+.login-card button:hover,
+.login-card .submit-button:hover,
+.login-card .btn-loading:hover {
+    background: #16a34a !important;
+}
+.login-card .btn-success,
+.login-card .btn-primary {
+    background: #22c55e !important;
+    color: #fff !important;
+    border: none !important;
+}
+.login-card .btn-success:hover,
+.login-card .btn-primary:hover {
+    background: #16a34a !important;
+}
+.login-card .btn-success:disabled,
+.login-card .btn-primary:disabled,
+.login-card .submit-button:disabled,
+.login-card .btn-loading:disabled,
+.login-card button:disabled {
+    background: #bbf7d0 !important;
+    color: #198754 !important;
+    opacity: 0.7 !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+.login-card {
+    min-width: 360px;
+    min-height: 340px;
+    transition: min-height 0.35s cubic-bezier(.4,2,.6,1), box-shadow 0.2s;
+}
+.login-card .fade-slide {
+    transition: opacity 0.4s, transform 0.4s;
+}
+.login-card .secondary-link {
+    color: #6b7280;
+    font-size: 0.98rem;
+    margin-top: 1.2rem;
+}
+.login-card .secondary-link a {
+    color: #22c55e;
+    text-decoration: underline;
+    transition: color 0.18s;
+}
+.login-card .secondary-link a:hover {
+    color: #16a34a;
+}
+
+.login-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    margin-top: 1.2rem;
+}
+
+.login-card .login-actions .btn-success:disabled,
+.login-card .login-actions .submit-button:disabled,
+.login-card .login-actions .btn-loading:disabled,
+.login-card .login-actions button:disabled {
+    background: #bbf7d0 !important;
+    color: #198754 !important;
+    opacity: 0.7 !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.signup-card button,
+.signup-card .submit-button,
+.signup-card .btn-loading {
+    width: 100%;
+    min-width: 180px;
+    padding: 0.7rem 0;
+    border-radius: 0.7rem;
+    font-size: 1.08rem;
+    font-weight: 600;
+    background: #22c55e !important;
+    color: #fff !important;
+    border: none !important;
+    box-shadow: 0 2px 8px rgba(34,197,94,0.08);
+    transition: background 0.18s;
+    margin: 0;
+    display: block;
+}
+.signup-card button:hover,
+.signup-card .submit-button:hover,
+.signup-card .btn-loading:hover {
+    background: #16a34a !important;
+}
+.signup-card .btn-success,
+.signup-card .btn-primary {
+    background: #22c55e !important;
+    color: #fff !important;
+    border: none !important;
+}
+.signup-card .btn-success:hover,
+.signup-card .btn-primary:hover {
+    background: #16a34a !important;
+}
+.signup-card .btn-success:disabled,
+.signup-card .btn-primary:disabled,
+.signup-card .submit-button:disabled,
+.signup-card .btn-loading:disabled,
+.signup-card button:disabled {
+    background: #6ee7b7 !important;
+    color: #198754 !important;
+    opacity: 1 !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+.signup-card .form-control:focus {
+    border-color: #22c55e !important;
+    box-shadow: 0 0 0 2px #bbf7d0 !important;
+}

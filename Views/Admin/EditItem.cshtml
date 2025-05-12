@@ -1,0 +1,75 @@
+@model TezStore.Models.SellableItem
+
+@{
+    ViewData["Title"] = "Ürünü Düzenle";
+}
+
+<h2 class="mb-4">
+    <img src="~/images/icons/editproduct.png" class="edit-icon" alt="Düzenle" /> Ürünü Düzenle
+</h2>
+
+<form id="editItemForm" enctype="multipart/form-data">
+    @Html.AntiForgeryToken()
+    <input type="hidden" asp-for="Id" />
+
+    <div class="mb-3">
+        <label class="form-label">Ürün Adı</label>
+        <input asp-for="Name" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Açıklama</label>
+        <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Fiyat</label>
+        <input asp-for="Price" type="number" step="0.01" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Yeni Görsel (isteğe bağlı)</label>
+        <input type="file" name="newImage" class="form-control" />
+    </div>
+
+    @if (!string.IsNullOrWhiteSpace(Model.ImagePath))
+    {
+        <div class="mb-3">
+            <label class="form-label">Mevcut Görsel:</label><br />
+            <img src="@($"{Model.ImagePath}?v={Model.Id}")" style="max-height: 150px;" />
+        </div>
+    }
+
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+    <a href="@Url.Action("Items", "Admin")" class="btn btn-secondary">Geri</a>
+</form>
+
+@section Scripts {
+<script>
+    document.getElementById("editItemForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+        const formData = new FormData(this);
+
+        fetch("/Admin/EditItem", {
+            method: "POST",
+            body: formData
+        })
+        .then(res => res.ok ? res.text() : Promise.reject())
+        .then(() => {
+            showNotification("Ürün başarıyla güncellendi.", "success");
+            setTimeout(() => window.location.href = "/Admin/Items", 1500);
+        })
+        .catch(() => {
+            showNotification("Güncelleme başarısız oldu.", "danger");
+        });
+    });
+</script>
+}
+
+<style>
+    .edit-icon {
+        width: 50px;
+        height: 50px;
+        object-fit: contain;
+    }
+</style>

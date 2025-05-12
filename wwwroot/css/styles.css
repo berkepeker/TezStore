@@ -1,0 +1,65 @@
+/* Icon Styles */
+.nav-icon {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    margin-right: 5px;
+}
+
+.alert-icon {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    margin-right: 8px;
+}
+
+.wallet-icon {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    margin-right: 8px;
+    opacity: 0.7; /* 20% opaklık (80% transparan) */
+}
+
+.cart-icon {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    margin-right: 8px;
+}
+
+.profile-edit-icon {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    opacity: 5;
+}
+
+.profile-pic-icon {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    margin-right: 1rem;
+}
+
+.cartBgIcon {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-right: 1rem;
+}
+
+.add-icon {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin-right: 8px;
+}
+
+.users-icon {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin-right: 8px;
+}

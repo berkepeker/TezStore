@@ -1,0 +1,177 @@
+@{
+    Layout = "_AuthLayout";
+    ViewData["BodyClass"] = "login-page";
+}
+
+<div id="notification"></div>
+
+<div class="login-container">
+    <div class="login-card">
+        <div class="login-content">
+            <div id="headerSection">
+                <h3 id="headerTitle">Telefon numarası</h3>
+                <p class="text-muted" id="headerSubtitle">Devam etmek için telefon numaranızı girin</p>
+            </div>
+
+            <div id="phoneStep">
+                <input id="phoneInput" type="text" maxlength="10" class="form-control mb-2" placeholder="5XX XXX XXXX">
+                <div id="phoneError" class="error-message"></div>
+                <button id="phoneSubmit" class="btn btn-primary">İleri</button>
+            </div>
+
+            <div id="passwordStep" class="fade-slide">
+                <h3>Şifre</h3>
+                <p class="text-muted">Lütfen şifrenizi giriniz</p>
+                <div class="input-group mb-2">
+                    <input id="passwordInput" type="password" maxlength="6" class="form-control" placeholder="******">
+                    <span class="password-toggle" id="togglePassword">👁️</span>
+                </div>
+                <div id="passwordError" class="error-message"></div>
+                <div class="login-actions">
+                    <button id="passwordSubmit" class="btn btn-primary submit-button">Giriş Yap</button>
+                    <button id="backToPhone" class="btn btn-secondary">&#8592; Geri Dön</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="secondary-link">
+            Hesabınız yok mu? <a href="/Account/SignUp">Kayıt ol</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    const phoneStep = document.getElementById('phoneStep');
+    const passwordStep = document.getElementById('passwordStep');
+    const phoneInput = document.getElementById('phoneInput');
+    const passwordInput = document.getElementById('passwordInput');
+    const phoneSubmit = document.getElementById('phoneSubmit');
+    const passwordSubmit = document.getElementById('passwordSubmit');
+    const backToPhone = document.getElementById('backToPhone');
+    const phoneError = document.getElementById('phoneError');
+    const passwordError = document.getElementById('passwordError');
+    const headerSection = document.getElementById('headerSection');
+    const togglePassword = document.getElementById('togglePassword');
+    const notification = document.getElementById('notification');
+
+    function showNotification(message, type) {
+        notification.className = type;
+        notification.textContent = message;
+        notification.style.display = 'block';
+        setTimeout(() => { notification.style.display = 'none'; }, 3000);
+    }
+
+    phoneSubmit.addEventListener('click', submitPhone);
+    phoneInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') submitPhone();
+    });
+
+    passwordSubmit.addEventListener('click', submitPassword);
+    passwordInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') submitPassword();
+    });
+
+    backToPhone.addEventListener('click', () => {
+        passwordStep.classList.remove('show');
+        setTimeout(() => {
+            phoneStep.style.display = 'block';
+            headerSection.style.display = 'block';
+        }, 300);
+    });
+
+    togglePassword.addEventListener('click', () => {
+        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordInput.setAttribute('type', type);
+        togglePassword.textContent = type === 'password' ? '👁️' : '🙈';
+    });
+
+    function submitPhone() {
+        phoneError.textContent = '';
+        const phone = phoneInput.value.trim();
+        if (phone.length !== 10) {
+            phoneError.textContent = 'Telefon numarası 10 haneli olmalıdır.';
+            return;
+        }
+        phoneSubmit.classList.add('btn-loading');
+        fetch('/Account/ValidatePhone', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ TelefonNo: phone })
+        })
+        .then(response => response.json())
+        .then(data => {
+            setTimeout(() => {
+                phoneSubmit.classList.remove('btn-loading');
+                if (data.success) {
+                    phoneStep.style.display = 'none';
+                    headerSection.style.display = 'none';
+                    setTimeout(() => {
+                        passwordStep.classList.add('show');
+                    }, 300);
+                } else {
+                    phoneError.textContent = data.message;
+                    showNotification(data.message, 'error');
+                }
+            }, 500);
+        })
+        .catch(() => {
+            phoneSubmit.classList.remove('btn-loading');
+            phoneError.textContent = 'Bir hata oluştu. Lütfen tekrar deneyin.';
+            showNotification('Bir hata oluştu. Lütfen tekrar deneyin.', 'error');
+        });
+    }
+
+    function submitPassword() {
+    passwordError.textContent = '';
+    passwordSubmit.classList.add('btn-loading'); // 🎯 Loading spinner ekle
+    passwordSubmit.disabled = true;               // 🎯 Butonu devre dışı bırak
+
+    const password = passwordInput.value.trim();
+    if (password.length !== 6) {
+        passwordError.textContent = 'Şifre 6 haneli olmalıdır.';
+        showNotification('Şifre 6 haneli olmalıdır.', 'error');
+
+        passwordSubmit.classList.remove('btn-loading'); // 🎯 Hatalıysa spinnerı kaldır
+        passwordSubmit.disabled = false;
+        return;
+    }
+
+    const startTime = Date.now(); // 🎯 Başlangıç zamanı
+
+    fetch('/Account/ValidatePassword', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ Sifre: password })
+    })
+    .then(response => response.json())
+    .then(data => {
+        const elapsed = Date.now() - startTime;
+        const delay = Math.max(1000 - elapsed, 0);
+
+        setTimeout(() => {
+            passwordSubmit.classList.remove('btn-loading');
+            passwordSubmit.disabled = false;
+
+            if (data.success) {
+                showNotification('Başarıyla giriş yapıldı!', 'success');
+                setTimeout(() => { window.location.href = '/Store'; }, 1500);
+            } else {
+                passwordError.textContent = data.message;
+                showNotification(data.message, 'error');
+            }
+        }, delay);
+    })
+    .catch(() => {
+        const elapsed = Date.now() - startTime;
+        const delay = Math.max(1000 - elapsed, 0);
+
+        setTimeout(() => {
+            passwordSubmit.classList.remove('btn-loading');
+            passwordSubmit.disabled = false;
+            passwordError.textContent = 'Bir hata oluştu. Lütfen tekrar deneyin.';
+            showNotification('Bir hata oluştu. Lütfen tekrar deneyin.', 'error');
+        }, delay);
+    });
+}
+
+</script>

@@ -1,0 +1,69 @@
+@model List<TezStore.Models.User>
+@{
+    ViewData["Title"] = "Kullanıcı Yönetimi";
+}
+
+<h2 class="mb-4">
+    <img src="~/images/icons/users.png" class="users-icon" alt="Kullanıcılar" /> Kullanıcı Yönetimi
+</h2>
+
+<a href="@Url.Action("AddUser", "Admin")" class="btn btn-success mb-3">➕ Yeni Kullanıcı Ekle</a>
+
+<table class="table custom-item-table">
+    <thead>
+        <tr>
+            <th>Telefon No</th>
+            <th class="name-cell">Ad Soyad</th>
+            <th>Cinsiyet</th>
+            <th>Durum</th>
+            <th>Bakiye</th>
+            <th>Kayıt Tarihi</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var u in Model)
+        {
+            <tr>
+                <td>@u.TelefonNo</td>
+                <td class="name-cell">@u.Ad @u.Soyad</td>
+                <td>@u.Cinsiyet</td>
+                <td>
+                    @if (u.Durum == "Admin")
+                    {
+                        <span class="badge bg-danger">Admin</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-secondary">Aktif</span>
+                    }
+                </td>
+                <td>@u.Balance.ToString("C")</td>
+                <td>@u.KayitTarihi.ToString("dd.MM.yyyy")</td>
+                <td class="text-nowrap">
+                    <a href="@Url.Action("EditUser", "Admin", new { telefonNo = u.TelefonNo })"
+                       class="btn btn-primary btn-sm me-1">
+                        <i class="bi bi-pencil-square me-1"></i>Düzenle
+                    </a>
+
+                    <form asp-action="DeleteUser" asp-controller="Admin"
+                          method="post" asp-route-telefonNo="@u.TelefonNo"
+                          class="d-inline">
+                        <button type="submit" class="btn btn-danger btn-sm"
+                                onclick="return confirm('Bu kullanıcıyı silmek istediğinize emin misiniz?')">
+                            <i class="bi bi-trash me-1"></i>Sil
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<style>
+    .users-icon {
+        width: 50px;
+        height: 50px;
+        object-fit: contain;
+        margin-right: 8px;
+    }

@@ -1,0 +1,138 @@
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor Http
+
+@{
+    var currentController = ViewContext.RouteData.Values["controller"] as string;
+    var currentAction = ViewContext.RouteData.Values["action"] as string;
+    var userPhone = Http.HttpContext.Session.GetString("UserPhone");
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewData["Title"] – TezStore Admin</title>
+    
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/styles.css" />
+</head>
+<body class="bg-light">
+
+    @* Bakiye widget'ı ve sepet grubu ana container'ın DIŞINDA, body'nin hemen içinde *@
+    @if (!string.IsNullOrEmpty(userPhone) && currentController == "Store" && currentAction == "Index")
+    {
+        <div id="balanceWidget" class="balance-widget d-flex align-items-center p-2 bg-white rounded shadow-sm" style="top:80px;">
+            <img src="~/images/icons/wallet.png" class="wallet-icon" alt="Bakiye" />
+            <span class="fw-bold me-1">Bakiye:</span>
+            <span id="balanceAmount">@ViewBag.Balance?.ToString("C")</span>
+        </div>
+        <div class="cart-fixed-group" style="top:80px;">
+            <button id="toggleCartBtn" class="btn btn-success cart-toggle-btn">
+                <img src="~/images/icons/cart.png" class="cart-icon" alt="Sepet" /> Sepeti Aç
+            </button>
+            <div id="cartPanel" class="cart-panel">
+                <div class="d-flex align-items-center mb-3">
+                    <h5 class="mb-0 ms-2 text-success" style="z-index:1; position:relative;">Sepetim</h5>
+                </div>
+                <div class="cart-items-scroll position-relative" style="z-index:1; min-height: 120px;">
+                    <img src="~/images/icons/cartbackground.png" id="cartBgIcon" style="position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); z-index:0; pointer-events:none; width:8rem; opacity:0.13; user-select:none;" alt="Sepet Arkaplan" />
+                    <div id="cartItemsContainer" style="position:relative; z-index:1;"></div>
+                </div>
+                <div class="mt-3">
+                    <div class="d-flex justify-content-between align-items-center fw-bold">
+                        <span>Toplam:</span>
+                        <span id="cartTotalAmount">0.00 ₺</span>
+                    </div>
+                    <div class="d-grid gap-2 mt-3">
+                        <button class="btn btn-success" onclick="completePurchase()">Alışverişi Tamamla</button>
+                        <button class="btn btn-outline-success" onclick="clearCart()">Sepeti Boşalt</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+    <nav class="navbar navbar-expand-lg navbar-white bg-white border-bottom shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="@Url.Action("Index", "Store")">
+                <span class="fw-bold text-primary">TezStore</span>
+                <span class="badge bg-danger rounded-pill" style="font-size: 0.75rem; cursor: pointer;" onclick="window.location='@Url.Action("Index", "Admin")'">
+                    Admin
+                </span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#adminNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="adminNav">
+                <ul class="navbar-nav ms-auto align-items-center gap-3">
+
+                    <li class="nav-item">
+                        <a class="nav-link @(currentController == "Admin" ? "fw-bold text-primary" : "")"
+                           href="@Url.Action("Index", "Admin")">
+                            <img src="~/images/icons/dashboard.png" class="nav-icon" alt="Dashboard" /> Dashboard
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link @(currentController == "Admin" && ViewContext.RouteData.Values["action"]?.ToString() == "Users" ? "fw-bold text-primary" : "")"
+                           href="@Url.Action("Users", "Admin")">
+                            <img src="~/images/icons/users.png" class="nav-icon" alt="Kullanıcılar" /> Kullanıcılar
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link @(currentController == "Admin" && ViewContext.RouteData.Values["action"]?.ToString() == "Items" ? "fw-bold text-primary" : "")"
+                           href="@Url.Action("Items", "Admin")">
+                            <img src="~/images/icons/products.png" class="nav-icon" alt="Ürünler" /> Ürünler
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Index", "Profile")">
+                            <img src="~/images/icons/user.png" class="nav-icon" alt="Profil" /> Profilim
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <form asp-controller="Account" asp-action="Logout" method="post" class="d-inline">
+                            <button type="submit" class="btn btn-link nav-link p-0 text-danger">
+                                <img src="~/images/icons/logout.png" class="nav-icon" alt="Çıkış" /> Çıkış
+                            </button>
+                        </form>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-4 page-transition">
+
+    @* Notification Area *@
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <img src="~/images/icons/success.png" class="alert-icon" alt="Başarılı" /> @TempData["Success"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <img src="~/images/icons/error.png" class="alert-icon" alt="Hata" /> @TempData["Error"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+
+    @RenderBody()
+    </main>
+    <script src="~/js/site.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

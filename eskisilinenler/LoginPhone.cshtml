@@ -1,0 +1,172 @@
+@{
+    ViewData["Title"] = "Giriş";
+    Layout = "_AuthLayout";
+}
+
+<div class="container">
+    <div class="login-card">
+        <div class="login-header">
+            <h2>Hoş Geldiniz</h2>
+            <p>Lütfen telefon numaranızı giriniz</p>
+        </div>
+
+        <div class="id-container">
+            <input type="text" class="index-input" placeholder="5XX XXX XXXX" maxlength="12" readonly>
+        </div>
+
+        <div class="number-pad">
+            <div class="number-button" onclick="addNumber('1')">1</div>
+            <div class="number-button" onclick="addNumber('2')">2</div>
+            <div class="number-button" onclick="addNumber('3')">3</div>
+            <div class="number-button" onclick="addNumber('4')">4</div>
+            <div class="number-button" onclick="addNumber('5')">5</div>
+            <div class="number-button" onclick="addNumber('6')">6</div>
+            <div class="number-button" onclick="addNumber('7')">7</div>
+            <div class="number-button" onclick="addNumber('8')">8</div>
+            <div class="number-button" onclick="addNumber('9')">9</div>
+            <div class="number-button delete-button" onclick="removeLastCharacter()">
+                <i class="fas fa-backspace"></i>
+            </div>
+            <div class="number-button" onclick="addNumber('0')">0</div>
+            <div class="number-button submit-button" onclick="submitId()">
+                <i class="fas fa-arrow-right"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        let isSubmitting = false;
+
+        function formatPhoneNumber(value) {
+            if (!value) return "";
+            const number = value.replace(/\D/g, '');
+            let formatted = '';
+            
+            if (number.length > 0) formatted += number.substr(0, 3);
+            if (number.length > 3) formatted += ' ' + number.substr(3, 3);
+            if (number.length > 6) formatted += ' ' + number.substr(6, 4);
+            
+            return formatted;
+        }
+
+        function addNumber(number) {
+            const inputField = document.querySelector('.index-input');
+            const currentValue = inputField.value.replace(/\D/g, '');
+            
+            if (currentValue.length < 10) {
+                const newValue = currentValue + number;
+                inputField.value = formatPhoneNumber(newValue);
+                
+                inputField.style.transform = 'scale(1.02)';
+                setTimeout(() => {
+                    inputField.style.transform = 'scale(1)';
+                }, 150);
+
+                updateSubmitButton(newValue.length === 10);
+            }
+        }
+
+        function removeLastCharacter() {
+            const inputField = document.querySelector('.index-input');
+            const currentValue = inputField.value.replace(/\D/g, '');
+            
+            if (currentValue.length > 0) {
+                const newValue = currentValue.slice(0, -1);
+                inputField.value = formatPhoneNumber(newValue);
+                updateSubmitButton(newValue.length === 10);
+            }
+        }
+
+        function updateSubmitButton(isValid) {
+            const submitButton = document.querySelector('.submit-button');
+            if (isValid) {
+                submitButton.classList.add('active');
+            } else {
+                submitButton.classList.remove('active');
+            }
+        }
+
+        function showNotification(message, type) {
+            const existingNotification = document.querySelector('.alert-success, .alert-error');
+            if (existingNotification) {
+                existingNotification.remove();
+            }
+
+            const notification = document.createElement('div');
+            notification.className = `alert-${type}`;
+            notification.innerHTML = `
+                <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}"></i>
+                <span>${message}</span>
+            `;
+            document.body.appendChild(notification);
+            
+            notification.style.opacity = '0';
+            notification.style.transform = 'translate(-50%, -20px)';
+            
+            setTimeout(() => {
+                notification.style.opacity = '1';
+                notification.style.transform = 'translate(-50%, 0)';
+            }, 10);
+
+            setTimeout(() => {
+                notification.classList.add('fade-out');
+                setTimeout(() => {
+                    notification.remove();
+                }, 300);
+            }, type === 'success' ? 2000 : 3000);
+        }
+
+        async function submitId() {
+            if (isSubmitting) return;
+            
+            const inputField = document.querySelector('.index-input');
+            const phoneNumber = inputField.value.replace(/\D/g, '');
+            
+            if (phoneNumber.length === 10) {
+                isSubmitting = true;
+                const submitButton = document.querySelector('.submit-button');
+                submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+                
+                try {
+                    const response = await fetch('@Url.Action("ValidatePhone", "Account")', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ TelefonNo: phoneNumber })
+                    });
+
+                    const result = await response.json();
+                    
+                    if (result.success) {
+                        showNotification(result.message, 'success');
+                        setTimeout(() => {
+                            // artık controller’ın döndürdüğü URL’e gidiyoruz
+                            window.location.href = result.redirectUrl;
+                        }, 500);
+
+                    } else {
+                        showNotification(result.message, 'error');
+                    }
+                } catch (error) {
+                    showNotification('Bir hata oluştu. Lütfen tekrar deneyin.', 'error');
+                } finally {
+                    isSubmitting = false;
+                    submitButton.innerHTML = '<i class="fas fa-arrow-right"></i>';
+                }
+            }
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key >= '0' && event.key <= '9') {
+                addNumber(event.key);
+            } else if (event.key === 'Backspace') {
+                removeLastCharacter();
+            } else if (event.key === 'Enter') {
+                submitId();
+            }
+        });
+    </script>
+}

@@ -1,0 +1,95 @@
+@{
+    ViewData["Title"] = "Admin Dashboard";
+    var users = ViewBag.LastUsers as List<TezStore.Models.User> ?? new();
+    var items = ViewBag.LastItems as List<TezStore.Models.SellableItem> ?? new();
+}
+
+<h2 class="mb-4">
+    <img src="~/images/icons/dashboard.png" class="dashboard-icon" alt="Dashboard" /> Yönetim Paneli
+</h2>
+
+<div class="row mb-4">
+    <div class="col-md-6">
+        <a href="@Url.Action("Users", "Admin")" class="text-decoration-none">
+            <div class="card text-white bg-primary h-100 dashboard-card">
+                <div class="card-body d-flex justify-content-between align-items-center">
+                    <div>
+                        <h5 class="card-title">
+                            <img src="~/images/icons/users.png" class="users-icon" alt="Kullanıcılar" /> Toplam Kullanıcı
+                        </h5>
+                        <p class="display-6">@ViewBag.UserCount</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-md-6">
+        <a href="@Url.Action("Items", "Admin")" class="text-decoration-none">
+            <div class="card text-white bg-success h-100 dashboard-card">
+                <div class="card-body d-flex justify-content-between align-items-center">
+                    <div>
+                        <h5 class="card-title">
+                            <img src="~/images/icons/products.png" class="products-icon" alt="Ürünler" /> Ürün Sayısı
+                        </h5>
+                        <p class="display-6">@ViewBag.ItemCount</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+<hr />
+
+<h4>
+    <img src="~/images/icons/profilepic.png" class="profilepic-icon" alt="Kullanıcılar" /> Son Kullanıcılar
+</h4>
+<table class="table custom-item-table">
+    <thead>
+        <tr>
+            <th>Telefon</th>
+            <th class="name-cell">Ad Soyad</th>
+            <th>Kayıt</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var u in users)
+        {
+            <tr>
+                <td>@u.TelefonNo</td>
+                <td class="name-cell">@u.Ad @u.Soyad</td>
+                <td>@u.KayitTarihi.ToString("dd.MM.yyyy")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h4 class="mt-4">
+    <img src="~/images/icons/repurpose.png" class="repurpose-icon" alt="Ürünler" /> Son Eklenen Ürünler
+</h4>
+<table class="table custom-item-table">
+    <thead>
+        <tr>
+            <th class="name-cell">Ürün</th>
+            <th>Fiyat</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in items)
+        {
+            <tr>
+                <td class="name-cell">@i.Name</td>
+                <td>@i.Price.ToString("C")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<style>
+    .repurpose-icon, .profilepic-icon, .users-icon, .products-icon, .dashboard-icon {
+        width: 45px;
+        height: 45px;
+        object-fit: contain;
+        margin-right: 8px;
+    }
+</style>

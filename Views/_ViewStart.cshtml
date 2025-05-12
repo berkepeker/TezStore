@@ -1,0 +1,10 @@
+﻿@* Views/_ViewStart.cshtml *@
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor Http
+
+@{
+    var role = Http.HttpContext.Session.GetString("UserRole");
+    Layout = role == "Admin"
+        ? "_AdminLayout"
+        : "_Layout";
+}

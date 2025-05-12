@@ -1,0 +1,83 @@
+@model TezStore.Models.User
+@{
+    ViewData["Title"] = "Kullanıcıyı Düzenle";
+}
+
+<h2 class="mb-4">
+    <img src="~/images/icons/edituser.png" class="edit-icon" alt="Düzenle" /> Kullanıcıyı Düzenle
+</h2>
+
+<form id="editUserForm">
+    @Html.AntiForgeryToken()
+
+    <input type="hidden" asp-for="TelefonNo" />
+
+    <div class="mb-3">
+        <label class="form-label">Ad</label>
+        <input asp-for="Ad" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Soyad</label>
+        <input asp-for="Soyad" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Şifre</label>
+        <input asp-for="Sifre" class="form-control" required maxlength="6" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Cinsiyet</label>
+        <select asp-for="Cinsiyet" class="form-select" required>
+            <option value="Erkek">Erkek</option>
+            <option value="Kadın">Kadın</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Durum</label>
+        <select asp-for="Durum" class="form-select" required>
+            <option value="Aktif">Aktif</option>
+            <option value="Admin">Admin</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Bakiye</label>
+        <input asp-for="Balance" type="number" step="0.01" class="form-control" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+    <a href="@Url.Action("Users", "Admin")" class="btn btn-secondary">Geri</a>
+</form>
+
+@section Scripts {
+<script>
+    document.getElementById("editUserForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+        const formData = new FormData(this);
+
+        fetch("/Admin/EditUser", {
+            method: "POST",
+            body: formData
+        })
+        .then(res => res.ok ? res.text() : Promise.reject())
+        .then(() => {
+            showNotification("Kullanıcı başarıyla güncellendi.", "success");
+            setTimeout(() => window.location.href = "/Admin/Users", 1500);
+        })
+        .catch(() => {
+            showNotification("Güncelleme sırasında bir hata oluştu.", "danger");
+        });
+    });
+</script>
+}
+
+<style>
+    .edit-icon {
+        width: 50px;
+        height: 50px;
+        object-fit: contain;
+    }
+</style>

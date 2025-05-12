@@ -1,0 +1,86 @@
+@model TezStore.ViewModels.AddUserViewModel
+@{
+    ViewData["Title"] = "Yeni Kullanıcı Ekle";
+}
+
+<h2 class="mb-4">
+    <img src="~/images/icons/add.png" class="add-icon" alt="Ekle" /> Yeni Kullanıcı Ekle
+</h2>
+
+<form id="addUserForm">
+    @Html.AntiForgeryToken()
+
+    <div class="mb-3">
+        <label class="form-label">Telefon Numarası</label>
+        <input asp-for="NewUser.TelefonNo" class="form-control" maxlength="10" required />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Şifre</label>
+        <input asp-for="NewUser.Sifre" class="form-control" maxlength="6" required />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Ad</label>
+        <input asp-for="NewUser.Ad" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Soyad</label>
+        <input asp-for="NewUser.Soyad" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Cinsiyet</label>
+        <select asp-for="NewUser.Cinsiyet" class="form-select" required>
+            <option value="">Seçiniz</option>
+            <option value="Erkek">Erkek</option>
+            <option value="Kadın">Kadın</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Durum</label>
+        <select asp-for="NewUser.Durum" class="form-select" required>
+            <option value="Aktif">Aktif</option>
+            <option value="Admin">Admin</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-success">Kaydet</button>
+    <a href="@Url.Action("Users", "Admin")" class="btn btn-secondary">İptal</a>
+</form>
+
+@section Scripts {
+    <script>
+        document.getElementById("addUserForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+
+            fetch("/Admin/AddUser", {
+                method: "POST",
+                body: formData
+            })
+            .then(res => res.json())
+            .then(data => {
+                showNotification(data.message, data.success ? "success" : "danger");
+                if (data.success) {
+                    setTimeout(() => window.location.href = "/Admin/Users", 1500);
+                }
+            })
+            .catch(() => {
+                showNotification("Beklenmeyen bir hata oluştu.", "danger");
+            });
+        });
+    </script>
+}
+
+<style>
+    .add-icon {
+        width: 50px;
+        height: 50px;
+        object-fit: contain;
+        margin-right: 8px;
+    }
+</style>

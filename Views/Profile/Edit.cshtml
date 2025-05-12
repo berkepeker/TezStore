@@ -1,0 +1,108 @@
+@model TezStore.ViewModels.UserProfileEditViewModel
+@{
+    ViewData["Title"] = "Profil Düzenle";
+}
+
+<div class="container py-4 d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+    <div class="card shadow-lg p-4 w-100" style="max-width: 480px;">
+        <div class="text-center mb-4">
+            <img src="~/images/icons/edituser.png" alt="Profil Düzenle" class="profile-edit-icon" />
+            <h2 class="fw-bold mt-2 mb-0">Profil Bilgilerini Düzenle</h2>
+            <div class="text-muted small">Kişisel bilgilerinizi ve şifrenizi güncelleyebilirsiniz.</div>
+        </div>
+        @if (TempData["Success"] != null)
+        {
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <i class="bi bi-check-circle-fill me-2"></i> @TempData["Success"]
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        }
+        @if (!ViewData.ModelState.IsValid)
+        {
+            <div class="alert alert-danger">
+                Lütfen hatalı alanları düzeltin.
+            </div>
+        }
+        <form asp-action="Edit" method="post" autocomplete="off">
+            <div class="mb-3">
+                <label class="form-label">Telefon Numarası</label>
+                <input asp-for="TelefonNo" class="form-control" readonly />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Ad</label>
+                <input asp-for="Ad" class="form-control" required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Soyad</label>
+                <input asp-for="Soyad" class="form-control" required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Cinsiyet</label>
+                <select asp-for="Cinsiyet" class="form-select" required>
+                    <option value="">Seçiniz</option>
+                    <option value="Erkek">Erkek</option>
+                    <option value="Kadın">Kadın</option>
+                    <option value="Diğer">Diğer</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Doğum Tarihi</label>
+                <input asp-for="DogumTarihi" type="date" class="form-control" />
+            </div>
+            <hr />
+            <div class="mb-3">
+                <label class="form-label">Şifreniz</label>
+                <div class="d-flex align-items-center gap-2">
+                    <input type="password" value="******" class="form-control w-auto" readonly style="width:120px; background:#f1f3f5;" />
+                    <button type="button" class="btn btn-outline-secondary" id="showPasswordEdit">
+                        <i class="bi bi-pencil"></i> Şifreyi Değiştir
+                    </button>
+                </div>
+            </div>
+            <div id="passwordEditFields" style="display:none; animation: fadeIn 0.5s;">
+                <div class="card shadow-sm p-3 mb-3">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="fw-bold">Şifreyi Değiştir</span>
+                        <button type="button" class="btn btn-sm btn-outline-danger" id="cancelPasswordEdit"><i class="bi bi-x-lg"></i> Vazgeç</button>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Mevcut Şifre</label>
+                        <input asp-for="MevcutSifre" type="password" class="form-control" maxlength="6" inputmode="numeric" pattern="\d{6}" title="6 haneli rakam olmalı" oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,6)" />
+                        <span asp-validation-for="MevcutSifre" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Yeni Şifre</label>
+                        <input asp-for="YeniSifre" type="password" class="form-control" pattern="\d{6}" title="6 haneli rakam olmalı" maxlength="6" inputmode="numeric" oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,6)" />
+                        <span asp-validation-for="YeniSifre" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Yeni Şifre (Tekrar)</label>
+                        <input asp-for="YeniSifreTekrar" type="password" class="form-control" pattern="\d{6}" title="6 haneli rakam olmalı" maxlength="6" inputmode="numeric" oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,6)" />
+                        <span asp-validation-for="YeniSifreTekrar" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="d-grid gap-2 mt-4">
+                <button type="submit" class="btn btn-success btn-lg">Kaydet</button>
+                <a asp-action="Index" class="btn btn-outline-secondary">İptal</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+<script>
+    document.getElementById('showPasswordEdit').addEventListener('click', function() {
+        document.getElementById('passwordEditFields').style.display = 'block';
+        this.style.display = 'none';
+    });
+    document.getElementById('cancelPasswordEdit').addEventListener('click', function() {
+        document.getElementById('passwordEditFields').style.display = 'none';
+        document.getElementById('showPasswordEdit').style.display = 'inline-block';
+        // Şifre alanlarını temizle
+        document.querySelector('[name="MevcutSifre"]').value = '';
+        document.querySelector('[name="YeniSifre"]').value = '';
+        document.querySelector('[name="YeniSifreTekrar"]').value = '';
+    });
+</script>
+} 

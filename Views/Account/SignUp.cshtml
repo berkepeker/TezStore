@@ -1,0 +1,128 @@
+@{
+    Layout = "_AuthLayout";
+    ViewData["BodyClass"] = "login-page"; // Login ve Signup için ortak body class kullanıyoruz
+}
+
+<div id="notification"></div>
+
+<div class="login-container">
+    <div class="signup-card">
+        <h3>Kayıt Ol</h3>
+
+        <input id="phoneInput" type="text" class="form-control mb-2" placeholder="Telefon No (5XX XXX XXXX)"
+               maxlength="10" inputmode="numeric" pattern="\d*">
+
+        <div class="input-group mb-2">
+            <input id="passwordInput" type="password" class="form-control" placeholder="Şifre (6 Haneli)"
+                   maxlength="6" inputmode="numeric" pattern="\d*">
+            <span id="togglePassword" class="input-group-text" style="cursor:pointer;">👁️</span>
+        </div>
+
+        <input id="firstNameInput" type="text" class="form-control capitalize mb-2" placeholder="Adınız" maxlength="30">
+
+        <input id="lastNameInput" type="text" class="form-control capitalize mb-2" placeholder="Soyadınız" maxlength="30">
+
+        <input id="birthDateInput" type="date" class="form-control mb-2">
+
+        <select id="genderInput" class="form-control mb-2">
+            <option value="">Cinsiyet Seçin</option>
+            <option value="Erkek">Erkek</option>
+            <option value="Kadın">Kadın</option>
+        </select>
+
+        <div id="signupError" class="error-message"></div>
+        <div class="login-actions">
+            <button id="signupSubmit" class="btn btn-success submit-button">Kayıt Ol</button>
+        </div>
+        <div class="mt-3 secondary-link">
+            Zaten hesabın var mı? <a href="/Account/Login">Giriş Yap</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    const phoneInput = document.getElementById('phoneInput');
+    const passwordInput = document.getElementById('passwordInput');
+    const firstNameInput = document.getElementById('firstNameInput');
+    const lastNameInput = document.getElementById('lastNameInput');
+    const birthDateInput = document.getElementById('birthDateInput');
+    const genderInput = document.getElementById('genderInput');
+    const signupSubmit = document.getElementById('signupSubmit');
+    const signupError = document.getElementById('signupError');
+    const notification = document.getElementById('notification');
+    const togglePassword = document.getElementById('togglePassword');
+
+    signupSubmit.addEventListener('click', submitSignUp);
+
+    togglePassword.addEventListener('click', () => {
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            togglePassword.textContent = '🙈';
+        } else {
+            passwordInput.type = 'password';
+            togglePassword.textContent = '👁️';
+        }
+    });
+
+    function showNotification(message, type) {
+        notification.innerText = message;
+        notification.style.backgroundColor = type === 'success' ? '#28a745' :
+                                              type === 'error' ? '#dc3545' : '#17a2b8';
+        notification.style.display = 'block';
+        setTimeout(() => {
+            notification.style.display = 'none';
+        }, 3000);
+    }
+
+    function submitSignUp() {
+    signupError.textContent = '';
+    signupSubmit.classList.add('btn-loading');
+    signupSubmit.disabled = true;
+
+    const startTime = Date.now(); // 🎯 Başlangıç zamanı
+
+    const data = {
+        TelefonNo: phoneInput.value.trim(),
+        Sifre: passwordInput.value.trim(),
+        Ad: firstNameInput.value.trim(),
+        Soyad: lastNameInput.value.trim(),
+        DogumTarihi: birthDateInput.value,
+        Cinsiyet: genderInput.value
+    };
+
+    fetch('/Account/SignUp', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    })
+    .then(res => res.json())
+    .then(data => {
+        const elapsed = Date.now() - startTime; // 🎯 Ne kadar süre geçti
+        const delay = Math.max(1000 - elapsed, 0); // 🎯 1000ms = 1 saniye garantile
+
+        setTimeout(() => { // 🎯 Gecikmeli spinner kapatma
+            signupSubmit.classList.remove('btn-loading');
+            signupSubmit.disabled = false;
+
+            if (data.success) {
+                showNotification(data.message, 'success');
+                setTimeout(() => {
+                    window.location.href = '/Account/Login';
+                }, 1500);
+            } else {
+                showNotification(data.message, 'error');
+            }
+        }, delay);
+    })
+    .catch(() => {
+        const elapsed = Date.now() - startTime;
+        const delay = Math.max(1000 - elapsed, 0);
+
+        setTimeout(() => {
+            signupSubmit.classList.remove('btn-loading');
+            signupSubmit.disabled = false;
+            showNotification('Bir hata oluştu. Lütfen tekrar deneyin.', 'error');
+        }, delay);
+    });
+}
+</script>

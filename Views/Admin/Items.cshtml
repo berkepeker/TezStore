@@ -1,0 +1,84 @@
+@model IEnumerable<TezStore.Models.SellableItem>
+@{
+    ViewData["Title"] = "Ürünler";
+}
+
+<h2>
+    <img src="~/images/icons/products.png" class="products-icon" alt="Ürünler" /> Ürün Yönetimi
+</h2>
+<a href="@Url.Action("AddItem", "Admin")" class="btn btn-success mb-3">➕ Yeni Ürün Ekle</a>
+
+<table class="table custom-item-table">
+    <thead class="table-light">
+        <tr>
+            <th class="name-cell">Ürün Adı</th>
+            <th class="description-cell">Açıklama</th>
+            <th>Fiyat</th>
+            <th>Görsel</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="name-cell">@item.Name</td>
+                <td class="description-cell">@item.Description</td>
+                <td class="text-nowrap">@item.Price.ToString("C")</td>
+                <td>
+                    @if (!string.IsNullOrWhiteSpace(item.ImagePath))
+                    {
+                        <img src="@($"{item.ImagePath}?v={item.Id}")"
+                             class="img-thumbnail item-img"
+                             alt="Ürün Görseli" />
+                    }
+                    else
+                    {
+                        <span class="text-muted">Yok</span>
+                    }
+                </td>
+                <td>
+                    <a href="@Url.Action("EditItem", "Admin", new { id = item.Id })"
+                    class="btn btn-primary btn-sm me-2">
+                        <i class="bi bi-pencil-square me-1"></i> Düzenle
+                    </a>
+
+                    <button class="btn btn-danger btn-sm"
+                            onclick="deleteItem(@item.Id)">
+                        <i class="bi bi-trash me-1"></i> Sil
+                    </button>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts {
+<script>
+    function deleteItem(id) {
+        if (!confirm("Bu ürünü silmek istediğinizden emin misiniz?")) return;
+
+        fetch(`/Admin/DeleteItem/${id}`, {
+            method: "POST"
+        })
+        .then(res => res.ok ? res.text() : Promise.reject())
+        .then(() => {
+            showNotification("Ürün başarıyla silindi.", "success");
+            setTimeout(() => window.location.reload(), 1000);
+        })
+        .catch(() => {
+            showNotification("Ürün silinemedi.", "danger");
+        });
+    }
+</script>
+}
+
+<style>
+    .products-icon {
+        width: 50px;
+        height: 50px;
+        object-fit: contain;
+        margin-right: 8px;
+    }
+</style>

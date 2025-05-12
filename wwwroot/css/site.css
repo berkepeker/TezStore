@@ -1,0 +1,482 @@
+/* ------------------------------ */
+/* Temel yazı tipi ve görünüm ayarları */
+/* ------------------------------ */
+
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+/* ------------------------------ */
+/* Odak hali (focus) gölgeleri */
+/* ------------------------------ */
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* ------------------------------ */
+/* Body ve container ayarları */
+/* ------------------------------ */
+body {
+  margin-bottom: 60px;
+  background-color: #f8f9fa;
+}
+
+main.container {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* ------------------------------ */
+/* Eskiden eklenmiş gölge, başlık altı ve satır bölme */
+/* ------------------------------ */
+/* Kutulara gölge */
+.box-shadow {
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+}
+/* Başlık alt çizgisi */
+.text-secondary {
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: .5rem;
+}
+/* Fiyatın satırlara bölünmesini engeller */
+.no-wrap {
+  white-space: nowrap;
+}
+
+/* ------------------------------ */
+/* Ortak border-bottom sınıfı */
+/* ------------------------------ */
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5 !important;
+}
+
+/* ------------------------------ */
+/* Navbar & Menü stilleri */
+/* ------------------------------ */
+/* Marka yazısı */
+.navbar-brand {
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #1b6ec2 !important;
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Navigasyon linkleri */
+.nav-link {
+  color: #333 !important;
+  margin-right: 1rem;
+  transition: color .2s;
+}
+.nav-link:hover,
+.nav-link.active {
+  color: #16a34a !important;
+}
+
+/* Link olarak kullanılan buton */
+.btn-link {
+  color: #333;
+  text-decoration: none;
+}
+.btn-link:hover {
+  color: #16a34a;
+  text-decoration: none;
+}
+.btn-link:focus,
+.nav-link:focus,
+.btn-link.nav-link:focus {
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* ------------------------------ */
+/* Birincil buton (btn-primary) */
+/* ------------------------------ */
+.btn-primary {
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+  color: #fff;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+.btn-primary:hover {
+  background-color: #1861ac;
+  transform: translateY(-2px);
+}
+
+/* Admin rozeti */
+.admin-badge {
+  background-color: #dc3545; /* kırmızımsı admin vurgusu */
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 2px 6px;
+  border-radius: 8px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+/* Sayfa yavaşça görünür */
+.page-transition {
+  opacity: 0;
+  animation: fadeIn 0.4s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: none; }
+}
+
+
+
+
+
+/* Genel tablo stili */
+.custom-item-table {
+  border-collapse: separate;
+  border-spacing: 0;
+  background-color: #fff;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.03);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Başlık kısmı — Açık gri ton */
+.custom-item-table thead {
+  background-color: #f1f3f5; /* görseldeki gibi açık gri */
+}
+
+.custom-item-table th {
+  
+  border-bottom: 2px solid #dee2e6;
+  font-weight: 600;
+}
+
+
+.custom-item-table th,
+.custom-item-table td {
+  padding: 1rem;
+  vertical-align: middle;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* Daha yumuşak hover efekti */
+.custom-item-table tbody tr {
+  background-color: #f9f9f9;
+  transition: background-color 0.5s ease;
+}
+
+.custom-item-table tbody tr:hover {
+  background-color: #eaffff; /* çok açık mavi-gri tonu */
+}
+
+
+.item-img {
+  max-height: 140px;       
+  max-width: 200px;       
+  object-fit: cover;     
+  border-radius: 3px;
+  transition: transform 0.2s ease;
+}
+
+.item-img:hover {
+  transform: scale(1.05);
+}
+
+/* Tabloda açıklama sütun genişliğini ayarlamak için kullanılır. */
+.table td.description-cell,
+.table th.description-cell {
+    max-width: 250px;
+    white-space: normal;     /* Satıra sığmazsa alta geçsin */
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+/* Bu sınıf, isim hücrelerinin genişliğini ayarlamak için kullanılır. */
+.table td.name-cell,
+.table th.name-cell {
+    max-width: 200px;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+/* Bu sınıf, admin dashboard yönetim kartlarının genişliğini ayarlamak için kullanılır. */
+.dashboard-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 0.75rem;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+/* Sol üstte bakiye widget'ı */
+#balanceWidget {
+  position: fixed;
+  top: 24px;
+  left: 24px;
+  z-index: 1100;
+  background: #fffbe6;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 10px 18px;
+}
+
+/* Sağ üstte sepet paneli */
+.cart-panel {
+  position: fixed;
+  top: 80px; /* navbar yüksekliği kadar */
+  right: 24px;
+  width: 440px;
+  max-width: 98vw;
+  max-height: 600px;
+  border-radius: 0.75rem;
+  background: #fff;
+  padding: 1.2rem;
+  box-shadow: 0 0 24px rgba(34,197,94,0.13);
+  z-index: 1050;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: scale(0.92) translateY(-10px);
+  visibility: hidden;
+  transition: 
+    opacity 0.22s cubic-bezier(.4,1.4,.6,1),
+    transform 0.22s cubic-bezier(.4,1.4,.6,1),
+    visibility 0.22s;
+  overflow: hidden;
+  margin-top: 56px;
+}
+.cart-panel.cart-open {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  visibility: visible;
+}
+
+/* Sepeti aç/kapat butonu sağ üstte, sepet panelinin üstünde sabit */
+#toggleCartBtn, .cart-toggle-btn {
+  position: fixed;
+  top: 24px;
+  right: 420px; /* Sepet panelinin soluna hizalanır, panel genişliği + 16px boşluk */
+  z-index: 1100;
+  border-radius: 12px;
+  font-weight: bold;
+  background: #22c55e;
+  color: #f1f1f1;
+  box-shadow: 0 2px 8px rgba(34,197,94,0.10);
+  font-size: 1.1rem;
+  border: none; /* Border'ı kaldır */
+  outline: none; /* Tıklama çerçevesini kaldır */
+}
+#toggleCartBtn:hover, .cart-toggle-btn:hover {
+  background: #16a34a;
+  color: #fff;
+  border: none; /* Hover durumunda da border'ı kaldır */
+  outline: none;
+}
+
+#toggleCartBtn:focus, .cart-toggle-btn:focus {
+  border: none; /* Focus durumunda da border'ı kaldır */
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(34,197,94,0.25); /* İsteğe bağlı: focus durumunda hafif bir gölge */
+}
+
+/* Mobilde sepet paneli ve buton üst üste gelsin */
+@media (max-width: 600px) {
+  #balanceWidget {
+    top: 12px;
+    left: 12px;
+    padding: 8px 12px;
+    font-size: 0.95rem;
+  }
+  .cart-panel {
+    top: 60px;
+    right: 8px;
+    width: 96vw;
+    min-width: 0;
+    max-width: 98vw;
+    padding: 0.7rem 0.5rem 1rem 0.5rem;
+  }
+  #toggleCartBtn, .cart-toggle-btn {
+    top: 12px;
+    right: 12px;
+    left: auto;
+    font-size: 1rem;
+    padding: 0.5em 1em;
+  }
+}
+
+.cart-items-scroll {
+  overflow-y: auto;
+  max-height: 300px;
+  min-height: 120px;
+  padding-right: 4px;
+  margin-bottom: 1rem;
+  overscroll-behavior: contain;
+  transition: max-height 0.35s cubic-bezier(.4,1.4,.6,1), padding 0.2s;
+}
+
+.cart-item {
+  background: rgba(255,255,255,0.92);
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 0.7rem;
+  box-shadow: 0 1px 4px rgba(34,197,94,0.04);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: box-shadow 0.2s, transform 0.15s, background 0.15s;
+  position: relative;
+  min-height: 110px;
+ 
+}
+
+.cart-item img {
+  width: 80px !important;
+  height: 80px !important;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  flex-shrink: 0;
+  display: block;
+}
+
+.cart-item .quantity-group {
+  gap: 2px;
+}
+
+.cart-item .quantity-group button {
+  padding: 2px 14px;
+  border: 1.5px solid #22c55e;
+  background: #fff;
+  color: #198754;
+  font-size: 1.15rem;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background 0.18s, color 0.18s, border-color 0.18s;
+  box-shadow: none;
+}
+.cart-item .quantity-group button:hover {
+  background: #e5f9e7;
+  color: #198754;
+  border-color: #16a34a;
+}
+
+.cart-item .quantity-number {
+  min-width: 32px;
+  height: 36px;
+  text-align: center;
+  padding: 2px 10px;
+  border: 1.5px solid #e5f9e7;
+  border-radius: 6px;
+  background: #fff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin: 0 2px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Fade-in ve fade-out animasyonları sadece ekleme/silmede */
+.cart-item.cart-item-animate-in {
+  animation: cartItemFadeIn 0.38s cubic-bezier(.4,1.4,.6,1) both;
+}
+.cart-item.fade-out {
+  animation: cartItemFadeOut 0.38s cubic-bezier(.4,1.4,.6,1) both;
+}
+
+@keyframes cartItemFadeIn {
+  0%   { opacity: 0; transform: translateY(20px) scale(0.95); filter: blur(2px); }
+  60%  { opacity: 1; transform: translateY(-4px) scale(1.03); filter: blur(0); }
+  100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+}
+@keyframes cartItemFadeOut {
+  0%   { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+  100% { opacity: 0; transform: translateY(20px) scale(0.95); filter: blur(2px); }
+}
+
+/* Gereksiz static ve width kurallarını kaldırıyorum */
+.cart-fixed-group {
+  position: fixed;
+  top: 80px;
+  right: 24px;
+  z-index: 1100;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.cart-toggle-btn {
+  margin-bottom: 8px;
+  width: 180px;
+  max-width: 90vw;
+}
+
+@media (max-width: 600px) {
+  .cart-fixed-group {
+    top: 12px;
+    right: 8px;
+    gap: 6px;
+  }
+  .cart-toggle-btn {
+    width: 98vw;
+    max-width: 98vw;
+    font-size: 1rem;
+    padding: 0.5em 1em;
+  }
+  .cart-panel {
+    width: 98vw;
+    max-width: 98vw;
+    padding: 0.7rem 0.5rem 1rem 0.5rem;
+  }
+}
+
+/* Eski sağ üstteki fixed stilleri kaldırıyorum */
+#toggleCartBtn {
+  position: static;
+}
+
+.cart-item .cart-item-details {
+  min-width: 0;
+  overflow: hidden;
+  flex: 1 1 0;
+}
+
+/* Fiyat badge'ı için özel stil */
+.price-badge {
+  display: inline-block;
+  background: #d6d6d6da;
+  color: #131313c7;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border-radius: 0.5rem;
+  padding: 0.35em 0.9em;
+  margin-bottom: 0.5em;
+  box-shadow: 0 2px 8px rgba(34,197,94,0.10);
+  letter-spacing: 0.5px;
+}
+
+.product-card {
+  transition: transform 0.18s cubic-bezier(.4,1.4,.6,1), box-shadow 0.18s;
+  
+}
+.product-card:hover {
+  transform: scale(1.025);
+  box-shadow: 0 8px 32px rgba(34,197,94,0.10), 0 2px 8px rgba(0,0,0,0.06);
+  z-index: 2;
+}
+
+
+
+
+
+

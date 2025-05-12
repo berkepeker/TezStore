@@ -1,0 +1,124 @@
+@model TezStore.ViewModels.ProfileViewModel
+
+@{
+    string? userRole = ViewBag.UserRole as string;
+    Layout = userRole == "Admin" ? "_AdminLayout" : "_Layout";
+}
+
+<div class="container py-4 d-flex flex-column align-items-center" style="min-height: 80vh;">
+    <div class="card shadow-lg p-4 mb-4 w-100" style="max-width: 520px; border-radius: 1.25rem;">
+        <div class="d-flex align-items-center mb-3">
+            <img src="~/images/icons/profilepic.png" alt="Profil" class="profile-pic-icon" />
+            <div class="ms-3">
+                <h3 class="fw-bold mb-0">@Model.User.Ad @Model.User.Soyad</h3>
+                <div class="text-muted small">@Model.User.TelefonNo</div>
+            </div>
+            <a asp-action="Edit" class="btn btn-outline-success ms-auto"><i class="bi bi-pencil"></i> Bilgilerimi Düzenle</a>
+        </div>
+        <div class="row g-2 mb-2">
+            <div class="col-6">
+                <div class="bg-light rounded p-2"><strong>Cinsiyet:</strong> @Model.User.Cinsiyet</div>
+            </div>
+            <div class="col-6">
+                <div class="bg-light rounded p-2"><strong>Doğum Tarihi:</strong> @(Model.User.DogumTarihi?.ToString("d") ?? "-")</div>
+            </div>
+            <div class="col-6">
+                <div class="bg-light rounded p-2"><strong>Bakiye:</strong> @Model.User.Balance.ToString("C")</div>
+            </div>
+            <div class="col-6">
+                <div class="bg-light rounded p-2"><strong>Kayıt Tarihi:</strong> @Model.User.KayitTarihi.ToString("d")</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row w-100 g-4">
+        <div class="col-lg-6">
+            <div class="card shadow-sm h-100" style="border-radius: 1rem;">
+                <div class="card-header bg-white d-flex align-items-center" style="border-radius: 1rem 1rem 0 0;">
+                    <span style="font-size:1.5rem;">🛍️</span>
+                    <h5 class="ms-2 mb-0">Alışveriş Geçmişi</h5>
+                </div>
+                <div class="card-body p-0" style="max-height: 320px; overflow-y: auto;">
+                    @if (Model.GroupedStoreTransactions == null || !Model.GroupedStoreTransactions.Any())
+                    {
+                        <div class="p-3 text-muted">Henüz alışveriş yapılmamış.</div>
+                    }
+                    else
+                    {
+                        foreach (var group in Model.GroupedStoreTransactions.Take(10))
+                        {
+                            <div class="border-bottom px-3 py-2">
+                                <div class="d-flex justify-content-between small text-muted mb-1">
+                                    <span>Satın Alım: @group.First().TransactionDate.ToString("g")</span>
+                                    <span>Toplam: @group.Sum(t => t.Amount).ToString("C")</span>
+                                </div>
+                                <ul class="list-unstyled mb-0">
+                                    @foreach (var t in group)
+                                    {
+                                        <li class="d-flex justify-content-between">
+                                            <span>@t.SellableItem.Name</span>
+                                            <span>@t.Amount.ToString("C")</span>
+                                        </li>
+                                    }
+                                </ul>
+                            </div>
+                        }
+                        if (Model.GroupedStoreTransactions.Count > 10)
+                        {
+                            <div class="text-center p-2">
+                                <span class="text-primary small">Daha fazla işlem için kaydırın...</span>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card shadow-sm h-100" style="border-radius: 1rem;">
+                <div class="card-header bg-white d-flex align-items-center" style="border-radius: 1rem 1rem 0 0;">
+                    <span style="font-size:1.5rem;">♻️</span>
+                    <h5 class="ms-2 mb-0">Geri Dönüşüm Geçmişi</h5>
+                </div>
+                <div class="card-body p-0" style="max-height: 320px; overflow-y: auto;">
+                    @if (!Model.RecyclingTransactions.Any())
+                    {
+                        <div class="p-3 text-muted">Henüz geri dönüşüm yapılmamış.</div>
+                    }
+                    else
+                    {
+                        <table class="table table-sm table-bordered mb-0">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Barkod</th>
+                                    <th>Kazanç</th>
+                                    <th>Bakiye Sonrası</th>
+                                    <th>Tarih</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            @foreach (var r in Model.RecyclingTransactions.Take(10))
+                            {
+                                <tr>
+                                    <td>@r.ProductId</td>
+                                    <td>@r.PointsEarned.ToString("C")</td>
+                                    <td>@r.NewBalance.ToString("C")</td>
+                                    <td>@r.IslemTarihi.ToString("g")</td>
+                                </tr>
+                            }
+                            </tbody>
+                        </table>
+                        if (Model.RecyclingTransactions.Count > 10)
+                        {
+                            <div class="text-center p-2">
+                                <span class="text-primary small">Daha fazla işlem için kaydırın...</span>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+}
