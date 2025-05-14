@@ -102,7 +102,7 @@
                                     <td>@r.ProductId</td>
                                     <td>@r.PointsEarned.ToString("C")</td>
                                     <td>@r.NewBalance.ToString("C")</td>
-                                    <td>@r.IslemTarihi.ToString("g")</td>
+                                    <td>@(r.IslemTarihi.AddHours(3).ToString("g")) <span class="text-muted small"></span></td>
                                 </tr>
                             }
                             </tbody>

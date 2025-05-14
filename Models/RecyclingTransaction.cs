@@ -10,7 +10,7 @@ namespace TezStore.Models
         public int Id { get; set; }
 
         [Required]
-        public string ProductId { get; set; } = string.Empty;
+        public long ProductId { get; set; }
 
         [Column(TypeName = "decimal(18,2)")]
         public decimal PointsEarned { get; set; }

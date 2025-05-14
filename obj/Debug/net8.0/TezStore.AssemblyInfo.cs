@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TezStore")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cad4d1f8cf56972f7c1a9db8e6a0b14a013fa8e5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3e398f47b1c3dc0031f844706d2b1cb137b3fd87")]
 [assembly: System.Reflection.AssemblyProductAttribute("TezStore")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TezStore")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
