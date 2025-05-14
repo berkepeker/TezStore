@@ -65,7 +65,7 @@ main.container {
 .navbar-brand {
   font-weight: 600;
   letter-spacing: 1px;
-  color: #1b6ec2 !important;
+  color: #16a34a !important;
   white-space: normal;
   text-align: center;
   word-break: break-all;
@@ -102,13 +102,13 @@ main.container {
 /* Birincil buton (btn-primary) */
 /* ------------------------------ */
 .btn-primary {
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+  background-color: #16a34a;
+  border-color: #16a34a;
   color: #fff;
   transition: background-color 0.2s ease, transform 0.1s ease;
 }
 .btn-primary:hover {
-  background-color: #1861ac;
+  background-color: #16a34a;
   transform: translateY(-2px);
 }
 

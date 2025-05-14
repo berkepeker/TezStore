@@ -4696,11 +4696,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\TezStore.csproj",
+      "projectUniqueName": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\TezStore.csproj",
       "projectName": "TezStore",
-      "projectPath": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\TezStore.csproj",
+      "projectPath": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\TezStore.csproj",
       "packagesPath": "C:\\Users\\Berke\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\obj\\",
+      "outputPath": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Berke\\AppData\\Roaming\\NuGet\\NuGet.Config",

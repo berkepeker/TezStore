@@ -1,399 +1,399 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\css\\auth.css",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\css\\auth.css",
       "PackagePath": "staticwebassets\\css\\auth.css"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\css\\site.css",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\css\\styles.css",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\css\\styles.css",
       "PackagePath": "staticwebassets\\css\\styles.css"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\favicon.ico",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\images\\02e4da12-ecad-4b4b-a0ef-528c2ec75e36.jpg",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\images\\02e4da12-ecad-4b4b-a0ef-528c2ec75e36.jpg",
       "PackagePath": "staticwebassets\\images\\02e4da12-ecad-4b4b-a0ef-528c2ec75e36.jpg"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\images\\0d1728ec-0c6c-44de-91f3-b1ba27a81da9.jpg",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\images\\0d1728ec-0c6c-44de-91f3-b1ba27a81da9.jpg",
       "PackagePath": "staticwebassets\\images\\0d1728ec-0c6c-44de-91f3-b1ba27a81da9.jpg"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\images\\1b07cc80-1071-476d-b575-913455434a88.jpg",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\images\\1b07cc80-1071-476d-b575-913455434a88.jpg",
       "PackagePath": "staticwebassets\\images\\1b07cc80-1071-476d-b575-913455434a88.jpg"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\images\\316a0230-f156-48f0-9958-92043437a967.jpg",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\images\\316a0230-f156-48f0-9958-92043437a967.jpg",
       "PackagePath": "staticwebassets\\images\\316a0230-f156-48f0-9958-92043437a967.jpg"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\images\\3df41e78-6aad-4ce7-a4fc-71cb2eb52b9c.jpeg",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\images\\3df41e78-6aad-4ce7-a4fc-71cb2eb52b9c.jpeg",
       "PackagePath": "staticwebassets\\images\\3df41e78-6aad-4ce7-a4fc-71cb2eb52b9c.jpeg"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\images\\567a25a5-87f8-49ed-890d-2ac8a83860d3.jpg",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\images\\567a25a5-87f8-49ed-890d-2ac8a83860d3.jpg",
       "PackagePath": "staticwebassets\\images\\567a25a5-87f8-49ed-890d-2ac8a83860d3.jpg"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\images\\60211f7c-5fc6-4736-8942-6565a47f26ba.png",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\images\\60211f7c-5fc6-4736-8942-6565a47f26ba.png",
       "PackagePath": "staticwebassets\\images\\60211f7c-5fc6-4736-8942-6565a47f26ba.png"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\images\\619ce116-3d72-4c52-bca2-dc72e08aae7d.jpg",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\images\\619ce116-3d72-4c52-bca2-dc72e08aae7d.jpg",
       "PackagePath": "staticwebassets\\images\\619ce116-3d72-4c52-bca2-dc72e08aae7d.jpg"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\images\\7b66d7ad-8def-426f-a706-4ad6c5740792.jpg",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\images\\7b66d7ad-8def-426f-a706-4ad6c5740792.jpg",
       "PackagePath": "staticwebassets\\images\\7b66d7ad-8def-426f-a706-4ad6c5740792.jpg"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\images\\8b61919f-2b83-458d-b81a-eda2338d088f.png",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\images\\8b61919f-2b83-458d-b81a-eda2338d088f.png",
       "PackagePath": "staticwebassets\\images\\8b61919f-2b83-458d-b81a-eda2338d088f.png"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\images\\92d82f26-a3b0-42db-afff-267dcf88a2eb.jpg",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\images\\92d82f26-a3b0-42db-afff-267dcf88a2eb.jpg",
       "PackagePath": "staticwebassets\\images\\92d82f26-a3b0-42db-afff-267dcf88a2eb.jpg"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\images\\965aef7b-c87f-47e2-a892-1dbf52cde6f3.jpg",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\images\\965aef7b-c87f-47e2-a892-1dbf52cde6f3.jpg",
       "PackagePath": "staticwebassets\\images\\965aef7b-c87f-47e2-a892-1dbf52cde6f3.jpg"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\images\\969cb54e-df30-439d-b222-13346caec2fd.png",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\images\\969cb54e-df30-439d-b222-13346caec2fd.png",
       "PackagePath": "staticwebassets\\images\\969cb54e-df30-439d-b222-13346caec2fd.png"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\images\\bdfcbdae-10af-4ce3-8e5b-2b92a8d378c9.jpg",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\images\\bdfcbdae-10af-4ce3-8e5b-2b92a8d378c9.jpg",
       "PackagePath": "staticwebassets\\images\\bdfcbdae-10af-4ce3-8e5b-2b92a8d378c9.jpg"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\images\\be768048-fa51-41b9-99ec-61a75aa68a77.jpg",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\images\\be768048-fa51-41b9-99ec-61a75aa68a77.jpg",
       "PackagePath": "staticwebassets\\images\\be768048-fa51-41b9-99ec-61a75aa68a77.jpg"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\images\\c41370b5-6515-4986-86d0-0da628496446.jpg",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\images\\c41370b5-6515-4986-86d0-0da628496446.jpg",
       "PackagePath": "staticwebassets\\images\\c41370b5-6515-4986-86d0-0da628496446.jpg"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\images\\c42f09fa-7904-4436-ae7f-449afafa876b.jpg",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\images\\c42f09fa-7904-4436-ae7f-449afafa876b.jpg",
       "PackagePath": "staticwebassets\\images\\c42f09fa-7904-4436-ae7f-449afafa876b.jpg"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\images\\cd97fe47-ce1e-46e7-a20c-698162cad199.jpg",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\images\\cd97fe47-ce1e-46e7-a20c-698162cad199.jpg",
       "PackagePath": "staticwebassets\\images\\cd97fe47-ce1e-46e7-a20c-698162cad199.jpg"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\images\\cd9de057-fde4-40e1-b796-f161228b84d5.jpg",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\images\\cd9de057-fde4-40e1-b796-f161228b84d5.jpg",
       "PackagePath": "staticwebassets\\images\\cd9de057-fde4-40e1-b796-f161228b84d5.jpg"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\images\\icons\\add.png",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\images\\icons\\add.png",
       "PackagePath": "staticwebassets\\images\\icons\\add.png"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\images\\icons\\adduser.png",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\images\\icons\\adduser.png",
       "PackagePath": "staticwebassets\\images\\icons\\adduser.png"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\images\\icons\\cart.png",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\images\\icons\\cart.png",
       "PackagePath": "staticwebassets\\images\\icons\\cart.png"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\images\\icons\\cartbackground.png",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\images\\icons\\cartbackground.png",
       "PackagePath": "staticwebassets\\images\\icons\\cartbackground.png"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\images\\icons\\dashboard.png",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\images\\icons\\dashboard.png",
       "PackagePath": "staticwebassets\\images\\icons\\dashboard.png"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\images\\icons\\editproduct.png",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\images\\icons\\editproduct.png",
       "PackagePath": "staticwebassets\\images\\icons\\editproduct.png"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\images\\icons\\edituser.png",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\images\\icons\\edituser.png",
       "PackagePath": "staticwebassets\\images\\icons\\edituser.png"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\images\\icons\\error.png",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\images\\icons\\error.png",
       "PackagePath": "staticwebassets\\images\\icons\\error.png"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\images\\icons\\login.png",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\images\\icons\\login.png",
       "PackagePath": "staticwebassets\\images\\icons\\login.png"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\images\\icons\\logout.png",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\images\\icons\\logout.png",
       "PackagePath": "staticwebassets\\images\\icons\\logout.png"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\images\\icons\\products.png",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\images\\icons\\products.png",
       "PackagePath": "staticwebassets\\images\\icons\\products.png"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\images\\icons\\profilepic.png",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\images\\icons\\profilepic.png",
       "PackagePath": "staticwebassets\\images\\icons\\profilepic.png"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\images\\icons\\repurpose.png",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\images\\icons\\repurpose.png",
       "PackagePath": "staticwebassets\\images\\icons\\repurpose.png"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\images\\icons\\shop.png",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\images\\icons\\shop.png",
       "PackagePath": "staticwebassets\\images\\icons\\shop.png"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\images\\icons\\success.png",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\images\\icons\\success.png",
       "PackagePath": "staticwebassets\\images\\icons\\success.png"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\images\\icons\\user.png",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\images\\icons\\user.png",
       "PackagePath": "staticwebassets\\images\\icons\\user.png"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\images\\icons\\users.png",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\images\\icons\\users.png",
       "PackagePath": "staticwebassets\\images\\icons\\users.png"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\images\\icons\\wallet.png",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\images\\icons\\wallet.png",
       "PackagePath": "staticwebassets\\images\\icons\\wallet.png"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\js\\site.js",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {

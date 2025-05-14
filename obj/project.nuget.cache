@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0yrg1J2TgZE=",
+  "dgSpecHash": "LRT3dy4cvOw=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Berke\\Desktop\\tez-mağaza\\TezStore\\TezStore.csproj",
+  "projectFilePath": "C:\\Users\\Berke\\Documents\\GitHub\\TezStore\\TezStore.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Berke\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Berke\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
