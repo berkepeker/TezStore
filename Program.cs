@@ -2,6 +2,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.SqlServer;
 using TezStore.Filters;
 using TezStore.Models;
+using System.Globalization;
+using Microsoft.AspNetCore.Localization;
 // Program.cs (.NET 6+ örneği)
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +21,15 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<AdminAuthorizationFilter>();
 builder.Services.AddHttpContextAccessor();
 var app = builder.Build();
+
+// Türkçe kültür ayarı (TL için)
+var supportedCultures = new[] { new CultureInfo("tr-TR") };
+app.UseRequestLocalization(new RequestLocalizationOptions
+{
+    DefaultRequestCulture = new RequestCulture("tr-TR"),
+    SupportedCultures = supportedCultures,
+    SupportedUICultures = supportedCultures
+});
 
 app.UseStaticFiles();
 app.UseRouting();
@@ -42,4 +53,3 @@ using (var scope = app.Services.CreateScope())
 }
 
 app.Run();
-
